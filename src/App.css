@@ -135,7 +135,7 @@ nav a:hover::before { transform: skew(-10deg) scaleX(1); transform-origin: left 
   background: var(--dark) center / cover no-repeat; color: #fff; cursor: pointer;
   transition: flex .7s cubic-bezier(.6,0,.2,1);
 }
-.service-panel.is-active { flex: 3.4 1 0; cursor: default; }
+.service-panel.is-active { flex: 5 1 0; cursor: default; }
 .service-panel::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,28,43,.15) 0%, rgba(15,28,43,.35) 45%, rgba(15,28,43,.92) 100%); transition: background .5s; }
 .service-panel:not(.is-active)::before { background: linear-gradient(180deg, rgba(15,28,43,.45) 0%, rgba(15,28,43,.75) 100%); }
 .service-panel-hit { position: absolute; inset: 0; z-index: 3; border: 0; background: none; cursor: inherit; }
@@ -146,11 +146,13 @@ nav a:hover::before { transform: skew(-10deg) scaleX(1); transform-origin: left 
   transition: opacity .3s;
 }
 .service-panel.is-active .service-panel-short { opacity: 0; }
-.service-panel-body { position: absolute; left: 0; bottom: 0; z-index: 2; padding: 30px 32px 32px; width: 540px; opacity: 0; transform: translateY(24px); transition: opacity .45s ease .25s, transform .55s cubic-bezier(.2,.8,.2,1) .25s; pointer-events: none; }
+/* Largeur figée sur celle du panneau ouvert (moitié de la rangée, 6 panneaux,
+   5 espaces de 12 px) : le texte ne se recompose pas pendant l'ouverture. */
+.service-panel-body { position: absolute; left: 0; bottom: 0; z-index: 2; padding: 30px 32px 32px; width: min(560px, calc((min(100vw, 1240px) * .9 - 60px) / 2)); opacity: 0; transform: translateY(24px); transition: opacity .45s ease .25s, transform .55s cubic-bezier(.2,.8,.2,1) .25s; pointer-events: none; }
 .service-panel.is-active .service-panel-body { opacity: 1; transform: none; pointer-events: auto; }
 .service-panel-body h3 { font-size: clamp(22px, 2.2vw, 30px); line-height: 1.15; margin-bottom: 6px; }
 .service-panel-tagline { font: 500 16px var(--heading); color: var(--accent-light); margin-bottom: 12px; }
-.service-panel-text { font-size: 14px; line-height: 1.65; color: #E3ECF5; max-width: 520px; }
+.service-panel-text { font-size: 14px; line-height: 1.65; color: #E3ECF5; }
 .service-panel-body ul { list-style: none; padding: 0; margin: 16px 0 20px; display: flex; flex-wrap: wrap; gap: 8px; }
 .service-panel-body li { padding: 6px 12px; font-size: 12.5px; color: #fff; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); border-radius: 30px; backdrop-filter: blur(4px); }
 .service-panel-body .btn { position: relative; z-index: 4; }
@@ -315,8 +317,6 @@ nav a:hover::before { transform: skew(-10deg) scaleX(1); transform-origin: left 
   .zones-grid { grid-template-columns: 1fr; }
   .services-section, .expertise, .faq, .realisations { margin-bottom: 70px; }
   .services-panels { height: 500px; }
-  .service-panel.is-active { flex-grow: 2.6; }
-  .service-panel-body { width: 440px; }
   .method-panel { padding: 36px; margin-left: -40px; }
   .expertise { gap: 40px; }
 }
@@ -496,3 +496,9 @@ body { font-family: var(--body); }
 @media (max-width: 900px) {
   .hero::before, .page-hero::before { background: linear-gradient(180deg, rgba(15,28,43,.9) 0%, rgba(15,28,43,.82) 60%, rgba(15,28,43,.6) 100%); }
 }
+
+.zone-card { display: flex; flex-direction: column; }
+.zone-card-more { margin-top: 14px; font: 600 13.5px var(--body); color: var(--accent); }
+.zone-card-more:hover { text-decoration: underline; }
+.zone-block { scroll-margin-top: 110px; }
+.chip-list a.chip-more { color: #fff; background: var(--accent); border-color: var(--accent); font-weight: 600; }

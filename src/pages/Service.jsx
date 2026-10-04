@@ -1,5 +1,8 @@
 import { serviceBySlug, SERVICES } from '../lib/services'
-import { CITIES, cityPath } from '../lib/cities'
+import { cityBySlug, cityPath } from '../lib/cities'
+
+// Grandes communes mises en avant ; les autres sont sur /zones-intervention/.
+const MAIN_CITIES = ['bordeaux', 'merignac', 'pessac', 'talence', 'begles', 'villenave-d-ornon', 'saint-medard-en-jalles', 'arcachon', 'la-teste-de-buch', 'libourne', 'lesparre-medoc', 'langon']
 import { PHOTOS } from '../lib/photos'
 import { COMPANY } from '../lib/company'
 import PageHero from '../components/PageHero'
@@ -58,7 +61,8 @@ export default function Service({ route }) {
       <section className="city-links" aria-labelledby="cities-title">
         <h2 id="cities-title" className="center">{service.short} : nous intervenons près de chez vous</h2>
         <ul className="chip-list">
-          {CITIES.map((city) => <li key={city.slug}><a href={cityPath(city)}>{service.short} {city.name}</a></li>)}
+          {MAIN_CITIES.map((slug) => cityBySlug[slug]).map((city) => <li key={city.slug}><a href={cityPath(city)}>{service.short} {city.name}</a></li>)}
+          <li><a className="chip-more" href="/zones-intervention/">Toutes les communes →</a></li>
         </ul>
       </section>
 

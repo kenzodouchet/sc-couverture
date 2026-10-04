@@ -40,6 +40,9 @@ function Counter({ to, suffix }) {
   return <span ref={ref} className="counter-number">{value}{suffix}</span>
 }
 
+// Communes affichées par secteur sur l'accueil ; la liste complète est sur /zones-intervention/.
+const ZONE_PREVIEW = 4
+
 const citiesByArea = Object.keys(AREAS).map((key) => ({ key, ...AREAS[key], cities: CITIES.filter((city) => city.area === key) }))
 
 export default function Home() {
@@ -116,8 +119,11 @@ export default function Home() {
               <h3><Icon.Pin />{area.name}</h3>
               <p>{area.intro}</p>
               <ul>
-                {area.cities.map((city) => <li key={city.slug}><a href={cityPath(city)}>{city.name}</a></li>)}
+                {area.cities.slice(0, ZONE_PREVIEW).map((city) => <li key={city.slug}><a href={cityPath(city)}>{city.name}</a></li>)}
               </ul>
+              {area.cities.length > ZONE_PREVIEW && (
+                <a className="zone-card-more" href={`/zones-intervention/#${area.key}`}>+ {area.cities.length - ZONE_PREVIEW} {area.cities.length - ZONE_PREVIEW > 1 ? 'autres communes' : 'autre commune'}</a>
+              )}
             </article>
           ))}
         </div>

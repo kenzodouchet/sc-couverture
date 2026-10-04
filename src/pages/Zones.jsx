@@ -16,7 +16,7 @@ export default function Zones({ route }) {
       <section className="zones has-backdrop" aria-label="Communes desservies par secteur">
         <Backdrop variant="zones" />
         {Object.entries(AREAS).map(([key, area]) => (
-          <div className="zone-block" key={key}>
+          <div className="zone-block" key={key} id={key}>
             <h2><Icon.Pin />{area.name}</h2>
             <p>{area.intro}</p>
             <div className="zone-cities">
