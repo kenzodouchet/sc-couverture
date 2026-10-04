@@ -11,18 +11,20 @@ const CATEGORIES = {
   entretien: 'Entretien',
 }
 
-// Illustrations des chantiers types. À remplacer par de vraies photos de
-// chantier dès que possible, avec la commune dans le titre et l'alt
-// (« Réfection d'une toiture en tuile canal à Mérignac ») : c'est excellent
-// pour le référencement local et Google Images.
+// Exemples de travaux (photos Unsplash, voir PHOTOS.md). À remplacer par de
+// vraies photos de chantier dès que possible, avec la commune dans le titre
+// et l'alt (« Réfection d'une toiture en tuile canal à Mérignac ») : c'est
+// excellent pour le référencement local et Google Images.
 const ITEMS = [
-  { src: PHOTOS.couverture, category: 'couverture', title: 'Réfection d’un pan de toiture en tuiles', alt: 'Illustration : pan de toiture en cours de réfection, liteaux neufs et tuiles posées' },
-  { src: PHOTOS.zinguerie, category: 'zinguerie', title: 'Gouttière et descente en zinc', alt: 'Illustration : gouttière pendante et descente en zinc sous un avant-toit en tuiles' },
-  { src: PHOTOS.fuite, category: 'depannage', title: 'Bâchage d’urgence après une tempête', alt: 'Illustration : couvreur bâchant une toiture endommagée sous la pluie' },
-  { src: PHOTOS.demoussage, category: 'entretien', title: 'Démoussage : avant / après', alt: 'Illustration : toiture moitié couverte de mousse, moitié nettoyée' },
-  { src: PHOTOS.charpente, category: 'couverture', title: 'Contrôle et renforcement de charpente', alt: 'Illustration : fermes de charpente en bois contrôlées par un couvreur' },
-  { src: PHOTOS.velux, category: 'couverture', title: 'Fenêtres de toit sur couverture ardoise', alt: 'Illustration : deux fenêtres de toit posées dans une couverture en ardoise' },
-  { src: PHOTOS.expertise, category: 'zinguerie', title: 'Lucarne habillée de zinc', alt: 'Illustration : lucarne en zinc sur une toiture en ardoise' },
+  { src: PHOTOS.couverture, category: 'couverture', title: 'Pose de tuiles sur liteaux neufs', alt: 'Couvreurs posant des tuiles sur un pan de toiture neuf, liteaux et écran sous-toiture apparents' },
+  { src: PHOTOS.tuileAncienne, category: 'couverture', title: 'Remaniement d’une toiture en tuile canal', alt: 'Couvreur remplaçant des tuiles canal anciennes sur une toiture en terre cuite' },
+  { src: PHOTOS.zinguerie, category: 'zinguerie', title: 'Descente d’eaux pluviales en zinc', alt: 'Descente de gouttière en zinc avec son dauphin au pied d’un mur' },
+  { src: PHOTOS.lucarne, category: 'zinguerie', title: 'Lucarne habillée de zinc', alt: 'Lucarne entièrement habillée de zinc sur une toiture en tuiles plates' },
+  { src: PHOTOS.fuite, category: 'depannage', title: 'Réparation de toiture', alt: 'Deux couvreurs réparant une toiture en tuiles et ardoises' },
+  { src: PHOTOS.demoussage, category: 'entretien', title: 'Tuiles envahies par la mousse', alt: 'Mousse installée entre des tuiles, toiture à démousser' },
+  { src: PHOTOS.charpente, category: 'couverture', title: 'Charpente bois sous toiture', alt: 'Charpente traditionnelle en bois vue des combles, sous une couverture en tuiles' },
+  { src: PHOTOS.velux, category: 'couverture', title: 'Fenêtre de toit sur couverture en tuiles', alt: 'Fenêtre de toit posée dans une toiture en tuiles, à côté d’une sortie de ventilation' },
+  { src: PHOTOS.ardoise, category: 'couverture', title: 'Toiture en ardoise et lucarnes', alt: 'Toiture en ardoise avec une rangée de lucarnes' },
 ]
 
 /** Visionneuse plein écran, ouverte au clic sur la photo centrale. */
@@ -121,9 +123,9 @@ export default function Showcase() {
     <section className="realisations has-backdrop" id="realisations" aria-labelledby="realisations-title">
       <Backdrop variant="realisations" />
       <p className="small-title center">En images</p>
-      <h2 className="center" id="realisations-title">Nos chantiers types, de la gouttière au faîtage</h2>
+      <h2 className="center" id="realisations-title">Nos métiers en images, de la gouttière au faîtage</h2>
 
-      <p className="center-copy">Couverture, zinguerie, dépannage, entretien : {count} interventions représentatives de notre quotidien en Gironde.</p>
+      <p className="center-copy">Couverture, zinguerie, dépannage, entretien : {count} exemples des travaux que nous réalisons partout en Gironde.</p>
 
       <div
         className="showcase"

@@ -9,7 +9,7 @@ import { Icon } from '../components/Icons'
 export default function Zones({ route }) {
   return (
     <>
-      <PageHero breadcrumb={route.breadcrumb} kicker="Gironde (33)" title="Couvreur en Gironde : nos zones d’intervention" image={PHOTOS.mission}>
+      <PageHero breadcrumb={route.breadcrumb} kicker="Gironde (33)" title="Couvreur en Gironde : nos zones d’intervention" image={PHOTOS.tuileCanal}>
         <p>Basés à {COMPANY.city}, nous intervenons dans {CITIES.length} communes et leurs alentours, de la métropole bordelaise au Bassin d’Arcachon, du Médoc au Libournais. Votre commune n’est pas listée ? Appelez-nous : nous couvrons tout le département.</p>
       </PageHero>
 

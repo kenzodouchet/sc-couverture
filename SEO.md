@@ -30,7 +30,8 @@
 - `FAQPage` sur l'accueil et les pages prestation.
 
 **Performance** (critère de classement)
-- HTML statique servi directement, illustrations SVG de quelques ko, cache
+- HTML statique servi directement, photos WebP de moins de 220 ko, image
+  d'en-tête préchargée, cache
   d'un an sur les fichiers versionnés, pas de cookie.
 
 ## À faire avant d'annoncer le site (indispensable)
@@ -52,8 +53,9 @@
    apparaît dans le « pack local » (la carte) : c'est le levier n°1.
 3. **Avis clients** : demander un avis Google après chaque chantier, si
    possible avec la commune et le type de travaux dans le texte.
-4. **Vraies photos** de chantier pour remplacer les illustrations
-   (`src/lib/photos.js` et la liste `ITEMS` de `src/components/Showcase.jsx`),
+4. **Vraies photos** de chantier pour remplacer les photos Unsplash
+   (`src/lib/photos.js` et la liste `ITEMS` de `src/components/Showcase.jsx`,
+   sources dans `PHOTOS.md`),
    nommées avec mots-clés (`refection-toiture-tuile-canal-talence.webp`) et
    légendées avec la commune. Google Images et les visiteurs préfèrent le réel.
 5. **Annuaires cohérents** : Pages Jaunes, annuaire CMA, Houzz, Habitatpresto…

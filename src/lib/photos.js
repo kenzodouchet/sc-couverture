@@ -1,21 +1,40 @@
-import hero from '../assets/photos/hero-couvreur-toiture-gironde.svg'
-import couverture from '../assets/photos/couverture-refection-toiture.svg'
-import zinguerie from '../assets/photos/zinguerie-gouttiere-zinc.svg'
-import fuite from '../assets/photos/recherche-fuite-bachage-toiture.svg'
-import demoussage from '../assets/photos/demoussage-nettoyage-toiture.svg'
-import charpente from '../assets/photos/charpente-traitement-reparation.svg'
-import velux from '../assets/photos/fenetre-de-toit-velux.svg'
-import mission from '../assets/photos/maison-toiture-zinguerie.svg'
-import methode from '../assets/photos/methode-chantier-couvreur.svg'
-import expertise from '../assets/photos/expertise-ardoise-lucarne.svg'
+import hero from '../assets/photos/couvreur-toiture-tuiles-gironde.webp'
+import couverture from '../assets/photos/pose-tuiles-refection-toiture.webp'
+import zinguerie from '../assets/photos/descente-gouttiere-zinc.webp'
+import fuite from '../assets/photos/reparation-toiture-couvreurs.webp'
+import demoussage from '../assets/photos/mousse-tuiles-demoussage-toiture.webp'
+import charpente from '../assets/photos/charpente-bois-sous-toiture.webp'
+import velux from '../assets/photos/fenetre-de-toit-tuiles.webp'
+import lucarne from '../assets/photos/lucarne-zinc-toiture-tuiles.webp'
+import ardoise from '../assets/photos/toiture-ardoise-lucarnes.webp'
+import village from '../assets/photos/toits-tuiles-village-gironde.webp'
+import tuileAncienne from '../assets/photos/couvreur-tuile-canal-ancienne.webp'
+import tuileCanal from '../assets/photos/tuile-canal-terre-cuite.webp'
 
 /**
  * Images du site, un emplacement par clé.
  *
- * Ce sont des illustrations vectorielles générées par
- * scripts/illustrations.mjs. Pour les remplacer par de vraies photos de
- * chantier : déposer le fichier (WebP, 300 ko au plus, nom avec mots-clés,
+ * Photos Unsplash (licence Unsplash : usage commercial libre, sans
+ * attribution obligatoire ; sources dans PHOTOS.md). Ce ne sont pas des
+ * chantiers de SC-Couverture : les remplacer par de vraies photos dès que
+ * possible. Déposer le fichier (WebP, 300 ko au plus, nom avec mots-clés,
  * ex. « refection-toiture-tuile-merignac.webp ») dans src/assets/photos/ et
  * changer l'import correspondant.
  */
-export const PHOTOS = { hero, couverture, zinguerie, fuite, demoussage, charpente, velux, mission, methode, expertise }
+export const PHOTOS = {
+  hero,
+  couverture,
+  zinguerie,
+  fuite,
+  demoussage,
+  charpente,
+  velux,
+  lucarne,
+  ardoise,
+  village,
+  tuileAncienne,
+  tuileCanal,
+  mission: village,
+  methode: tuileAncienne,
+  expertise: ardoise,
+}

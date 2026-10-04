@@ -31,7 +31,7 @@ export default function Service({ route }) {
             </section>
           ))}
           <figure className="article-figure">
-            <img src={PHOTOS[service.photo]} alt={`Illustration : ${service.name.toLowerCase()}`} width="1200" height="800" loading="lazy" decoding="async" />
+            <img src={PHOTOS[service.photo]} alt={service.photoAlt} width="1400" height="934" loading="lazy" decoding="async" />
           </figure>
         </article>
 

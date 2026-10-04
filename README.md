@@ -22,7 +22,7 @@ npm run preview    # sert dist/ pour vérifier le build
 | `npm run build` | Build client + build SSR + pré-rendu de chaque page, sitemap, robots.txt |
 | `npm run preview` | Sert `dist/` |
 | `npm run lint` | Analyse statique (oxlint) |
-| `npm run illustrations` | Régénère illustrations, logo, favicons et aperçu de partage |
+| `npm run brand` | Régénère logo, favicons et aperçu de partage |
 
 ## Où modifier quoi
 
@@ -34,7 +34,7 @@ npm run preview    # sert dist/ pour vérifier le build
 | Textes de l'accueil, FAQ | `src/lib/content.js` et `src/pages/Home.jsx` |
 | Titres et descriptions des pages | `src/lib/routes.js` (accueil, zones) et `src/lib/services.js` |
 | Données structurées (JSON-LD) | `src/lib/seo.js` |
-| Images | `src/lib/photos.js` |
+| Photos | `src/lib/photos.js` (sources et licence : `PHOTOS.md`) |
 | Couleurs, polices | `:root` en haut de `src/App.css` |
 | Logo | `scripts/illustrations.mjs` (fonction `emblemBody`) |
 

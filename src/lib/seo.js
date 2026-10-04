@@ -11,6 +11,7 @@ import { COMPANY, CONTACT } from './company'
 import { SERVICES, serviceBySlug } from './services'
 import { AREAS, CITIES, cityBySlug, atCity } from './cities'
 import { HOME_FAQS } from './content'
+import { PHOTOS } from './photos'
 
 const escape = (text) => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
@@ -143,12 +144,22 @@ function graph(route, site) {
   return { '@context': 'https://schema.org', '@graph': nodes }
 }
 
+/** Image d'en-tête de la page, préchargée : c'est le plus gros élément visible au chargement. */
+function heroImage(route) {
+  if (route.page === 'service') return PHOTOS[serviceBySlug[route.slug].photo]
+  if (route.page === 'zones') return PHOTOS.tuileCanal
+  if (route.page === 'home' || route.page === 'city') return PHOTOS.hero
+  return null
+}
+
 /** Code HTML à insérer dans <head> pour une route donnée. */
 export function renderHead(route, site) {
   const url = `${site}${route.path === '/404.html' ? '/' : route.path}`
   const image = `${site}/apercu.jpg`
   const json = JSON.stringify(graph(route, site)).replace(/</g, '\\u003c')
+  const hero = heroImage(route)
   return [
+    hero ? `<link rel="preload" as="image" href="${hero}" fetchpriority="high" />` : '',
     `<title>${escape(route.title)}</title>`,
     `<meta name="description" content="${escape(route.description)}" />`,
     route.noindex
@@ -166,5 +177,5 @@ export function renderHead(route, site) {
     '<meta property="og:locale" content="fr_FR" />',
     '<meta name="twitter:card" content="summary_large_image" />',
     `<script type="application/ld+json">${json}</script>`,
-  ].join('\n    ')
+  ].filter(Boolean).join('\n    ')
 }

@@ -14,6 +14,7 @@ export const SERVICES = [
   {
     slug: 'couverture-toiture',
     photo: 'couverture',
+    photoAlt: 'Couvreurs posant des tuiles neuves sur une toiture en réfection',
     icon: 'roof',
     short: 'Couverture',
     name: 'Couverture & rénovation de toiture',
@@ -54,6 +55,7 @@ export const SERVICES = [
   {
     slug: 'zinguerie',
     photo: 'zinguerie',
+    photoAlt: 'Descente d’eaux pluviales en zinc au pied d’un mur',
     icon: 'gutter',
     short: 'Zinguerie',
     name: 'Zinguerie : gouttières, chéneaux, noues',
@@ -93,6 +95,7 @@ export const SERVICES = [
   {
     slug: 'recherche-fuite-toiture',
     photo: 'fuite',
+    photoAlt: 'Couvreurs réparant une toiture',
     icon: 'drop',
     short: 'Fuites',
     name: 'Recherche de fuite & dépannage toiture',
@@ -127,6 +130,7 @@ export const SERVICES = [
   {
     slug: 'demoussage-toiture',
     photo: 'demoussage',
+    photoAlt: 'Mousse entre les tuiles d’une toiture à démousser',
     icon: 'spray',
     short: 'Démoussage',
     name: 'Démoussage & traitement de toiture',
@@ -167,6 +171,7 @@ export const SERVICES = [
   {
     slug: 'charpente',
     photo: 'charpente',
+    photoAlt: 'Charpente en bois vue depuis les combles',
     icon: 'truss',
     short: 'Charpente',
     name: 'Charpente : traitement & réparation',
@@ -199,6 +204,7 @@ export const SERVICES = [
   {
     slug: 'fenetre-de-toit',
     photo: 'velux',
+    photoAlt: 'Fenêtre de toit posée dans une couverture en tuiles',
     icon: 'window',
     short: 'Fenêtres de toit',
     name: 'Fenêtres de toit & isolation',

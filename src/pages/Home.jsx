@@ -78,7 +78,7 @@ export default function Home() {
         </div>
         <div className="mission-side">
           <div className="mission-block block-primary"><Icon.Roof className="mission-icon" /><p>Couverture, zinguerie, charpente.<br />Un seul interlocuteur.<br />Partout en Gironde.</p></div>
-          <div className="mission-photo" style={{ backgroundImage: `url(${PHOTOS.mission})` }} role="img" aria-label="Illustration : maison girondine avec toiture en ardoise et gouttières zinc"></div>
+          <div className="mission-photo" style={{ backgroundImage: `url(${PHOTOS.mission})` }} role="img" aria-label="Toits en tuiles d’un village de Gironde, vignes à l’horizon"></div>
           <div className="mission-block block-dark2"><Icon.Home className="mission-icon" /><p>Nous intervenons pour les <b>particuliers</b>, les <b>propriétaires bailleurs</b>, les <b>syndics de copropriété</b>, les <b>agences immobilières</b> et les <b>propriétés viticoles</b>, sur une échoppe comme sur un chai.</p></div>
           <a className="mission-cta" href="#contact">
             <span className="mission-cta-text"><span>Une fuite, un doute ?<br />Devis sous 48 h.</span><Icon.ArrowUp className="mission-cta-arrow" /></span>
@@ -135,7 +135,7 @@ export default function Home() {
         <p className="small-title center">Notre méthode</p>
         <h2 className="center" id="methode-title">Du premier appel à la toiture réceptionnée</h2>
         <div className="method-body">
-          <div className="method-photo" style={{ backgroundImage: `url(${PHOTOS.methode})` }} role="img" aria-label="Illustration : utilitaire d’artisan couvreur et échelle au pied d’une maison"></div>
+          <div className="method-photo" style={{ backgroundImage: `url(${PHOTOS.methode})` }} role="img" aria-label="Couvreur au travail sur une toiture en tuile canal ancienne"></div>
           <div className="method-panel">
             {METHOD_STEPS.map(([title, text], index) => (
               <div className="method-step" key={title}><span>{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div></div>
@@ -154,7 +154,7 @@ export default function Home() {
           <p className="body-copy">Nous les appliquons sur chaque chantier, et nous vous expliquons ce que nous faisons et pourquoi.</p>
           <a className="btn btn-primary" href="/couverture-toiture/">Découvrir nos travaux de couverture</a>
         </div>
-        <div className="expertise-photo" style={{ backgroundImage: `url(${PHOTOS.expertise})` }} role="img" aria-label="Illustration : lucarne habillée de zinc sur une toiture en ardoise"></div>
+        <div className="expertise-photo" style={{ backgroundImage: `url(${PHOTOS.expertise})` }} role="img" aria-label="Toiture en ardoise avec lucarnes"></div>
       </section>
 
       <section className="faq has-backdrop" id="faq" aria-labelledby="faq-title">
