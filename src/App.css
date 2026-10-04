@@ -518,7 +518,7 @@ body { font-family: var(--body); }
 
 /* Nom de marque assorti au tampon : Barlow Condensed, capitales espacées. */
 .logo { gap: 12px; }
-.brand-name { display: flex; flex-direction: column; line-height: 1; }
+.brand-name { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; text-align: left; }
 .brand-title { font: 800 27px 'Barlow Condensed', var(--heading); letter-spacing: .06em; text-transform: uppercase; color: #fff; }
 .brand-tag { margin-top: 4px; font: 700 11.5px 'Barlow Condensed', var(--heading); letter-spacing: .22em; text-transform: uppercase; color: var(--accent-light); }
 @media (max-width: 600px) {
