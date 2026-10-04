@@ -3,7 +3,9 @@
   --primary: #1E3A5F;
   --primary-soft: #E3ECF5;
   --accent: #C8702E;
-  --accent-hover: #B25F22;
+  --accent-hover: #934D18;
+  /* Cuivre des boutons, assez foncé pour un texte blanc lisible (contraste 4,6:1). */
+  --accent-strong: #B25F22;
   --accent-light: #F0A868;
   --dark: #0F1C2B;
   --dark-hover: #182B40;
@@ -38,7 +40,7 @@ a { text-decoration: none; color: inherit; }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 24px; font: 600 14px var(--body); border-radius: 8px; border: 0; cursor: pointer; transition: transform .2s, opacity .2s; }
 .btn:hover { transform: translateY(-2px); opacity: .92; }
-.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent { background: var(--accent-strong); color: #fff; }
 .btn-primary { background: var(--primary); color: #fff; }
 .btn-white { background: #fff; color: var(--primary); }
 .btn-accent:hover { background: var(--accent-hover); opacity: 1; }
@@ -384,9 +386,10 @@ nav a:hover::before { transform: skew(-10deg) scaleX(1); transform-origin: left 
 
 /* --- SC-Couverture : compléments ---------------------------------------- */
 body { font-family: var(--body); }
-.skip-link { position: absolute; left: 12px; top: -60px; z-index: 2000; padding: 10px 16px; background: var(--accent); color: #fff; border-radius: 8px; font-weight: 600; }
+.skip-link { position: absolute; left: 12px; top: -60px; z-index: 2000; padding: 10px 16px; background: var(--accent-strong); color: #fff; border-radius: 8px; font-weight: 600; }
 .skip-link:focus { top: 12px; }
-.hero-kicker { display: inline-block; margin-bottom: 16px; padding: 6px 14px; font: 600 12.5px var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--accent-light); background: rgba(15,28,43,.45); border: 1px solid rgba(240,168,104,.45); border-radius: 30px; }
+.hero-kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; font: 700 15px 'Barlow Condensed', var(--heading); letter-spacing: .16em; text-transform: uppercase; color: var(--accent-light); }
+.hero-kicker::before { content: ''; flex: 0 0 34px; height: 3px; background: var(--accent); border-radius: 2px; }
 .hero h1 { font-weight: 700; }
 .hero::before { background: linear-gradient(90deg, rgba(15,28,43,.92) 0%, rgba(15,28,43,.78) 38%, rgba(15,28,43,.4) 68%, rgba(15,28,43,.15) 100%); }
 .hero-bg { filter: brightness(.7) saturate(1.05); }
@@ -490,7 +493,7 @@ body { font-family: var(--body); }
 .zone-card-more { margin-top: 14px; font: 600 13.5px var(--body); color: var(--accent); }
 .zone-card-more:hover { text-decoration: underline; }
 .zone-block { scroll-margin-top: 110px; }
-.chip-list a.chip-more { color: #fff; background: var(--accent); border-color: var(--accent); font-weight: 600; }
+.chip-list a.chip-more { color: #fff; background: var(--accent-strong); border-color: var(--accent-strong); font-weight: 600; }
 
 /* Accueil : secteurs en tuiles compactes + grandes communes. */
 .zones-sectors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 1000px; margin: 36px auto 0; }
@@ -525,3 +528,7 @@ body { font-family: var(--body); }
   .brand-title { font-size: 22px; }
   .brand-tag { font-size: 10px; letter-spacing: .18em; }
 }
+
+/* Image d'en-tête : vraie balise <img> (découverte et affichée au plus tôt). */
+img.hero-bg { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+.page-hero-lead strong { color: #fff; font-weight: 600; }

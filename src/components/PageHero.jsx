@@ -7,7 +7,7 @@ export default function PageHero({ breadcrumb, kicker, title, children, image })
   return (
     <section className="page-hero-wrap" aria-labelledby="page-title">
       <div className="page-hero">
-        {image && <div className="hero-bg" style={{ backgroundImage: `url(${image})` }}></div>}
+        {image && <img className="hero-bg" src={image} alt="" fetchPriority="high" decoding="async" />}
         <div className="page-hero-content">
           {breadcrumb && <Breadcrumb items={breadcrumb} />}
           {kicker && <p className="hero-kicker">{kicker}</p>}

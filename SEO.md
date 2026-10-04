@@ -29,9 +29,13 @@
 - `Service` sur les pages prestation et commune.
 - `FAQPage` sur l'accueil et les pages prestation.
 
-**Performance** (critère de classement)
-- HTML statique servi directement, photos WebP de moins de 220 ko, image
-  d'en-tête préchargée, cache
+**Performance et accessibilité** (critères de classement)
+- Lighthouse mobile, mesuré en local le 4 octobre 2026 : SEO 100, accessibilité 100,
+  bonnes pratiques 100, performance 84 à 92 selon les pages ; CLS ≈ 0,02.
+- Polices hébergées avec le site (pas de Google Fonts bloquant), les trois
+  polices du premier écran préchargées.
+- Image d'en-tête en `<img>` prioritaire, version 828 px pour le mobile.
+- HTML statique servi directement, photos WebP de moins de 220 ko, cache
   d'un an sur les fichiers versionnés, pas de cookie.
 
 ## À faire avant d'annoncer le site (indispensable)

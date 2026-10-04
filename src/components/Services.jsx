@@ -15,7 +15,7 @@ export default function Services() {
       {SERVICES.map((service, index) => {
         const isActive = index === active
         return (
-          <article
+          <div
             key={service.slug}
             role="listitem"
             className={`service-panel${isActive ? ' is-active' : ''}`}
@@ -41,7 +41,7 @@ export default function Services() {
               </ul>
               <a className="btn btn-accent" href={`/${service.slug}/`}>{service.short} : en savoir plus</a>
             </div>
-          </article>
+          </div>
         )
       })}
     </div>

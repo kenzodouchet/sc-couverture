@@ -1,3 +1,15 @@
+// Polices hébergées avec le site (sous-ensemble latin, graisses utilisées
+// seulement) : pas de feuille Google Fonts qui bloque l'affichage.
+import '@fontsource/inter/latin-400.css'
+import '@fontsource/inter/latin-500.css'
+import '@fontsource/inter/latin-600.css'
+import '@fontsource/inter/latin-700.css'
+import '@fontsource/outfit/latin-500.css'
+import '@fontsource/outfit/latin-600.css'
+import '@fontsource/outfit/latin-700.css'
+import '@fontsource/barlow-condensed/latin-600.css'
+import '@fontsource/barlow-condensed/latin-700.css'
+import '@fontsource/barlow-condensed/latin-800.css'
 import './App.css'
 import { findRoute } from './lib/routes'
 import Layout from './components/Layout'

@@ -102,7 +102,7 @@ function Header({ page }) {
         <button type="button" className={`hamburger${menuOpen ? ' open' : ''}`} onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={menuOpen}>
           <span aria-hidden="true" /><span aria-hidden="true" /><span aria-hidden="true" />
         </button>
-        <a href="/" className="logo" aria-label={`${COMPANY.name}, retour à l’accueil`}>
+        <a href="/" className="logo">
           <img src={logo} alt="" width="52" height="52" />
           <Brand />
         </a>
@@ -131,7 +131,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <a href="/" className="footer-badge" aria-label={`${COMPANY.name}, retour à l’accueil`}>
+          <a href="/" className="footer-badge">
             <img src={badge} alt={`Tampon ${COMPANY.name}, toiture et zinguerie`} width="120" height="120" loading="lazy" />
           </a>
           <p>{COMPANY.name}, couvreur-zingueur basé à {COMPANY.city} : rénovation et réparation de toiture, gouttières et chéneaux en zinc, recherche de fuite, démoussage, charpente et fenêtres de toit dans toute la Gironde.</p>

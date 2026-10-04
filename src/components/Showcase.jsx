@@ -153,7 +153,7 @@ export default function Showcase() {
                 className={`showcase-card${isCurrent ? ' is-current' : ''}`}
                 style={{ '--o': offset, '--ao': Math.abs(offset), zIndex: 10 - Math.abs(offset), visibility: visible ? 'visible' : 'hidden' }}
                 onClick={() => (isCurrent ? setOpen(index) : select(index))}
-                aria-label={isCurrent ? `Agrandir : ${photo.title}` : `Afficher : ${photo.title}`}
+                aria-label={`${CATEGORIES[photo.category]} : ${isCurrent ? 'agrandir' : 'afficher'} « ${photo.title} »`}
                 aria-hidden={!visible}
                 tabIndex={visible ? 0 : -1}
               >

@@ -11,7 +11,15 @@ import { COMPANY, CONTACT } from './company'
 import { SERVICES, serviceBySlug } from './services'
 import { AREAS, CITIES, cityBySlug, atCity } from './cities'
 import { HOME_FAQS } from './content'
-import { PHOTOS } from './photos'
+import { PHOTOS, HERO_SRCSET, HERO_SIZES } from './photos'
+import interFont from '@fontsource/inter/files/inter-latin-400-normal.woff2?url'
+import outfitFont from '@fontsource/outfit/files/outfit-latin-700-normal.woff2?url'
+import barlowFont from '@fontsource/barlow-condensed/files/barlow-condensed-latin-800-normal.woff2?url'
+
+// Polices visibles au premier écran (texte, titre, logo), préchargées pour
+// éviter que le texte ne se recompose à leur arrivée (décalage de mise en page).
+const PRELOAD_FONTS = [interFont, outfitFont, barlowFont]
+  .map((href) => `<link rel="preload" as="font" type="font/woff2" href="${href}" crossorigin />`)
 
 const escape = (text) => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
@@ -159,7 +167,10 @@ export function renderHead(route, site) {
   const json = JSON.stringify(graph(route, site)).replace(/</g, '\\u003c')
   const hero = heroImage(route)
   return [
-    hero ? `<link rel="preload" as="image" href="${hero}" fetchpriority="high" />` : '',
+    ...PRELOAD_FONTS,
+    route.page === 'home'
+      ? `<link rel="preload" as="image" href="${hero}" imagesrcset="${HERO_SRCSET}" imagesizes="${HERO_SIZES}" fetchpriority="high" />`
+      : hero ? `<link rel="preload" as="image" href="${hero}" fetchpriority="high" />` : '',
     `<title>${escape(route.title)}</title>`,
     `<meta name="description" content="${escape(route.description)}" />`,
     route.noindex

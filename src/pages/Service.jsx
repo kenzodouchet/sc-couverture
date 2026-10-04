@@ -17,8 +17,8 @@ export default function Service({ route }) {
 
   return (
     <>
-      <PageHero breadcrumb={route.breadcrumb} kicker={service.tagline} title={service.h1} image={PHOTOS[service.photo]}>
-        <p>{service.excerpt} {COMPANY.name} intervient à Bordeaux et dans toute la Gironde, devis gratuit sous 48 h.</p>
+      <PageHero breadcrumb={route.breadcrumb} kicker={`${service.short} · Gironde`} title={service.h1} image={PHOTOS[service.photo]}>
+        <p><strong>{service.tagline}</strong> {service.excerpt} {COMPANY.name} intervient à Bordeaux et dans toute la Gironde, devis gratuit sous 48 h.</p>
       </PageHero>
 
       <div className="article-layout has-backdrop">

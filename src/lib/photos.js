@@ -1,4 +1,5 @@
 import hero from '../assets/photos/couvreur-toiture-tuiles-gironde.webp'
+import heroSmall from '../assets/photos/couvreur-toiture-tuiles-gironde-828.webp'
 import couverture from '../assets/photos/pose-tuiles-refection-toiture.webp'
 import zinguerie from '../assets/photos/descente-gouttiere-zinc.webp'
 import fuite from '../assets/photos/reparation-toiture-couvreurs.webp'
@@ -21,6 +22,10 @@ import tuileCanal from '../assets/photos/tuile-canal-terre-cuite.webp'
  * ex. « refection-toiture-tuile-merignac.webp ») dans src/assets/photos/ et
  * changer l'import correspondant.
  */
+/** Image d'en-tête de l'accueil en deux tailles : le mobile charge la petite. */
+export const HERO_SRCSET = `${heroSmall} 828w, ${hero} 1920w`
+export const HERO_SIZES = '(max-width: 900px) 100vw, 1240px'
+
 export const PHOTOS = {
   hero,
   couverture,

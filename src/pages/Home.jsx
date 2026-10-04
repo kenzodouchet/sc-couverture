@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { COMPANY, CONTACT } from '../lib/company'
-import { PHOTOS } from '../lib/photos'
+import { PHOTOS, HERO_SRCSET, HERO_SIZES } from '../lib/photos'
 import { AREAS, CITIES, cityBySlug, cityPath } from '../lib/cities'
 import { WHY_ITEMS, METHOD_STEPS, HOME_FAQS } from '../lib/content'
 import { Icon } from '../components/Icons'
@@ -50,9 +50,9 @@ export default function Home() {
     <>
       <section id="accueil" className="hero-wrap" aria-labelledby="hero-title">
         <div className="hero">
-          <div className="hero-bg" style={{ backgroundImage: `url(${PHOTOS.hero})` }}></div>
+          <img className="hero-bg" src={PHOTOS.hero} srcSet={HERO_SRCSET} sizes={HERO_SIZES} alt="" width="1920" height="1280" fetchPriority="high" decoding="async" />
           <div className="hero-content">
-            <p className="hero-kicker">Couvreur-zingueur · Bordeaux & Gironde</p>
+            <p className="hero-kicker">Couvreur-zingueur · Gironde</p>
             <h1 id="hero-title">Couvreur zingueur à Bordeaux et dans toute la Gironde</h1>
             <p>Rénovation et réparation de toiture, gouttières et chéneaux en zinc, recherche de fuite, démoussage, charpente et fenêtres de toit. {COMPANY.name} intervient chez les particuliers, les syndics et les professionnels, de Bordeaux au Bassin d’Arcachon, du Médoc au Libournais.</p>
             <div className="cta-row">
