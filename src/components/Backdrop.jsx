@@ -36,12 +36,16 @@ const ICONS = {
       <path d="M-8 40 V14 H8 V40" />
     </g>
   ),
+  // Même dessin que le logo : toit en chevron, rang d'ardoises, cheminée,
+  // gouttière et descente avec sa goutte.
   roof: () => (
     <g {...STROKE}>
-      <path d="M-46 6 L0 -34 L46 6" />
-      <path d="M-30 -8 C -22 -18, -14 -18, -6 -8 C 2 -18, 10 -18, 18 -8 C 26 -18, 34 -18, 38 -12" strokeWidth="5" />
-      <path d="M-40 14 C -30 4, -20 4, -10 14 C 0 4, 10 4, 20 14 C 30 4, 40 4, 44 8" strokeWidth="5" />
-      <path d="M-36 30 H36" />
+      <path d="M-44 2 L-4 -34 L36 2" />
+      <path d="M-24 2 L-4 -16 L16 2" strokeWidth="5" />
+      <path d="M18 -16 V-30 H28 V-7" strokeWidth="5" />
+      <path d="M-46 14 H34 a8 8 0 0 0 8 -8" />
+      <path d="M42 6 V30" />
+      <path d="M42 40 q 6 8 0 12 q -6 -4 0 -12 z" fill="currentColor" stroke="none" />
     </g>
   ),
   camera: () => (
