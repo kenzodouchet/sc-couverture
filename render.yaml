@@ -1,0 +1,36 @@
+# Configuration Render (« Blueprint »).
+#
+# Site entièrement statique : Render construit dist/ (une page HTML
+# pré-rendue par URL) et le sert tel quel, gratuitement, en HTTPS.
+# Sur Render : New > Blueprint, pointez sur ce dépôt.
+#
+# SITE_URL : adresse publique du site, utilisée pour les balises canonical,
+# Open Graph, le sitemap et le robots.txt. À remplacer par le vrai domaine
+# (ex. https://www.sc-couverture.fr) dès qu'il est branché, puis redéployer.
+
+services:
+  - type: web
+    name: sc-couverture
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    pullRequestPreviewsEnabled: false
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: SITE_URL
+        value: https://sc-couverture.onrender.com
+    headers:
+      # Fichiers nommés avec leur empreinte : mis en cache un an.
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
