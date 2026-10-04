@@ -165,7 +165,6 @@ export default function Layout({ page, children }) {
       <Header page={page} />
       <main id="contenu">{children}</main>
       <Footer />
-      <a className="mobile-call" href={`tel:${CONTACT.phone}`}><Icon.Phone />Appeler pour un devis gratuit</a>
     </div>
   )
 }

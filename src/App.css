@@ -364,7 +364,6 @@ nav a:hover::before { transform: skew(-10deg) scaleX(1); transform-origin: left 
   .contact-info { padding: 44px 7%; }
   .contact-map { min-height: 320px; }
   .footer-inner { grid-template-columns: 1fr; gap: 30px; padding-top: 50px; }
-  .site-footer { padding-bottom: 64px; }
 }
 
 @media (max-width: 600px) {
@@ -479,15 +478,11 @@ body { font-family: var(--body); }
 .footer-bottom { color: #8FA2B6; }
 .footer-bottom a:hover { color: #fff; }
 
-/* Bouton d'appel fixe sur mobile : le geste le plus utile sur téléphone. */
-.mobile-call { display: none; }
 @media (max-width: 900px) {
   .article-layout { grid-template-columns: 1fr; gap: 30px; margin: 44px auto; }
   .article-aside { position: static; }
   .service-cards { grid-template-columns: 1fr; }
   .page-hero { min-height: 0; padding: 50px 7% 44px; }
-  .mobile-call { display: flex; align-items: center; justify-content: center; gap: 10px; position: fixed; left: 10px; right: 10px; bottom: 10px; z-index: 900; padding: 15px; font: 600 15px var(--body); color: #fff; background: var(--accent); border-radius: 12px; box-shadow: 0 10px 30px rgba(15,28,43,.3); }
-  .mobile-call svg { width: 16px; height: 16px; fill: #fff; }
 }
 
 /* Voile sombre au-dessus de l'illustration, sous le texte. */
