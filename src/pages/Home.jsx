@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { COMPANY, CONTACT } from '../lib/company'
 import { PHOTOS } from '../lib/photos'
-import { AREAS, CITIES, cityPath } from '../lib/cities'
+import { AREAS, CITIES, cityBySlug, cityPath } from '../lib/cities'
 import { WHY_ITEMS, METHOD_STEPS, HOME_FAQS } from '../lib/content'
 import { Icon } from '../components/Icons'
 import Backdrop from '../components/Backdrop'
@@ -40,8 +40,8 @@ function Counter({ to, suffix }) {
   return <span ref={ref} className="counter-number">{value}{suffix}</span>
 }
 
-// Communes affichées par secteur sur l'accueil ; la liste complète est sur /zones-intervention/.
-const ZONE_PREVIEW = 4
+// Grandes communes mises en avant sur l'accueil ; la liste complète est sur /zones-intervention/.
+const MAIN_CITIES = ['bordeaux', 'merignac', 'pessac', 'talence', 'arcachon', 'libourne', 'lesparre-medoc', 'langon']
 
 const citiesByArea = Object.keys(AREAS).map((key) => ({ key, ...AREAS[key], cities: CITIES.filter((city) => city.area === key) }))
 
@@ -112,21 +112,19 @@ export default function Home() {
         <Backdrop variant="zones" />
         <p className="small-title center">Zones d’intervention</p>
         <h2 className="center" id="zones-title">Votre couvreur dans toute la Gironde</h2>
-        <p className="center-copy">Basés à {COMPANY.city}, nous intervenons dans tout le département. Choisissez votre commune pour voir ce que nous y faisons le plus souvent.</p>
-        <div className="zones-grid">
+        <p className="center-copy">Basés à {COMPANY.city}, nous intervenons dans tout le département. Choisissez votre secteur ou votre commune.</p>
+        <div className="zones-sectors">
           {citiesByArea.map((area) => (
-            <article className="zone-card" key={area.key}>
-              <h3><Icon.Pin />{area.name}</h3>
-              <p>{area.intro}</p>
-              <ul>
-                {area.cities.slice(0, ZONE_PREVIEW).map((city) => <li key={city.slug}><a href={cityPath(city)}>{city.name}</a></li>)}
-              </ul>
-              {area.cities.length > ZONE_PREVIEW && (
-                <a className="zone-card-more" href={`/zones-intervention/#${area.key}`}>+ {area.cities.length - ZONE_PREVIEW} {area.cities.length - ZONE_PREVIEW > 1 ? 'autres communes' : 'autre commune'}</a>
-              )}
-            </article>
+            <a className="zone-sector" key={area.key} href={`/zones-intervention/#${area.key}`}>
+              <Icon.Pin />
+              <strong>{area.name}</strong>
+              <span>{area.cities.length} commune{area.cities.length > 1 ? 's' : ''}</span>
+            </a>
           ))}
         </div>
+        <ul className="chip-list zones-main">
+          {MAIN_CITIES.map((slug) => cityBySlug[slug]).map((city) => <li key={city.slug}><a href={cityPath(city)}>Couvreur {city.name}</a></li>)}
+        </ul>
         <div className="center zones-more"><a className="btn btn-primary" href="/zones-intervention/">Toutes nos zones d’intervention</a></div>
       </section>
 

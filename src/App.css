@@ -497,3 +497,20 @@ body { font-family: var(--body); }
 .zone-card-more:hover { text-decoration: underline; }
 .zone-block { scroll-margin-top: 110px; }
 .chip-list a.chip-more { color: #fff; background: var(--accent); border-color: var(--accent); font-weight: 600; }
+
+/* Accueil : secteurs en tuiles compactes + grandes communes. */
+.zones-sectors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 1000px; margin: 36px auto 0; }
+.zone-sector { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; align-items: center; padding: 18px 20px; text-align: left; background: var(--light); border: 1px solid var(--line); border-radius: 14px; transition: border-color .2s, background .2s, transform .2s; }
+.zone-sector:hover { border-color: var(--accent); background: #fff; transform: translateY(-2px); }
+.zone-sector svg { grid-row: span 2; width: 22px; height: 22px; fill: var(--accent); }
+.zone-sector strong { font: 600 15.5px var(--heading); color: var(--dark2); line-height: 1.25; }
+.zone-sector span { font-size: 13px; color: var(--text); }
+.zones-main { margin-top: 26px; }
+.zones-more { margin-top: 30px; }
+@media (max-width: 900px) {
+  .zones-sectors { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .zone-sector { grid-template-columns: 1fr; padding: 14px; row-gap: 2px; }
+  .zone-sector svg { grid-row: auto; width: 18px; height: 18px; margin-bottom: 4px; }
+  .zone-sector strong { font-size: 14px; }
+  .zones-main li:nth-child(n+7) { display: none; }
+}
