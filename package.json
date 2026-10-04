@@ -11,7 +11,7 @@
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "lint": "oxlint",
-    "brand": "node scripts/illustrations.mjs"
+    "brand": "node scripts/brand.mjs"
   },
   "dependencies": {
     "react": "^19.2.7",
@@ -21,6 +21,7 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
+    "opentype.js": "^2.0.0",
     "oxlint": "^1.71.0",
     "sharp": "^0.35.5",
     "vite": "^8.1.1"

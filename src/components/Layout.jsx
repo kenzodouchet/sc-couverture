@@ -3,6 +3,7 @@ import { COMPANY, CONTACT } from '../lib/company'
 import { SERVICES } from '../lib/services'
 import { CITIES, cityPath } from '../lib/cities'
 import logo from '../assets/brand/logo.svg'
+import badge from '../assets/brand/badge.svg'
 import { Icon } from './Icons'
 
 /** Nom de marque : « SC » en cuivre. */
@@ -97,7 +98,7 @@ function Header({ page }) {
           <span aria-hidden="true" /><span aria-hidden="true" /><span aria-hidden="true" />
         </button>
         <a href="/" className="logo" aria-label={`${COMPANY.name}, retour à l’accueil`}>
-          <img src={logo} alt="" width="48" height="48" />
+          <img src={logo} alt="" width="52" height="52" />
           <Brand />
         </a>
         <nav className={menuOpen ? 'opened' : ''} aria-label="Navigation principale" ref={navRef}>
@@ -125,9 +126,8 @@ function Footer() {
     <footer className="site-footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <a href="/" className="logo footer-logo" aria-label={`${COMPANY.name}, retour à l’accueil`}>
-            <img src={logo} alt="" width="60" height="60" />
-            <Brand />
+          <a href="/" className="footer-badge" aria-label={`${COMPANY.name}, retour à l’accueil`}>
+            <img src={badge} alt={`Tampon ${COMPANY.name}, toiture et zinguerie`} width="120" height="120" loading="lazy" />
           </a>
           <p>{COMPANY.name}, couvreur-zingueur basé à {COMPANY.city} : rénovation et réparation de toiture, gouttières et chéneaux en zinc, recherche de fuite, démoussage, charpente et fenêtres de toit dans toute la Gironde.</p>
           <div className="footer-contact">

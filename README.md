@@ -36,7 +36,7 @@ npm run preview    # sert dist/ pour vérifier le build
 | Données structurées (JSON-LD) | `src/lib/seo.js` |
 | Photos | `src/lib/photos.js` (sources et licence : `PHOTOS.md`) |
 | Couleurs, polices | `:root` en haut de `src/App.css` |
-| Logo | `scripts/illustrations.mjs` (fonction `emblemBody`) |
+| Logo (tampon rond) | `scripts/brand.mjs`, puis `npm run brand` : badge, logo, favicons, aperçu de partage |
 
 ## Mettre en ligne
 
