@@ -6,8 +6,13 @@ import logo from '../assets/brand/logo.svg'
 import badge from '../assets/brand/badge.svg'
 import { Icon } from './Icons'
 
-/** Nom de marque : « SC » en cuivre. */
-export const Brand = () => <span className="brand-name"><b>SC</b>-Couverture</span>
+/** Nom de marque, dans le style du tampon : nom en capitales, métier en cuivre dessous. */
+export const Brand = () => (
+  <span className="brand-name">
+    <span className="brand-title">SC-Couverture</span>
+    <span className="brand-tag">Couvreur · Zingueur</span>
+  </span>
+)
 
 // Liens du menu. `section` : ancre de la page d'accueil, suivie au défilement.
 // `pages` : types de page sur lesquels le lien est marqué actif.

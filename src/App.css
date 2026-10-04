@@ -54,8 +54,6 @@ header { min-height: 80px; padding: 0 1.5%; display: flex; align-items: center; 
 /* L'emblème (arbre + toit, en blanc) est accompagné du nom écrit ; l'attribut
    alt de l'image est vide pour que le nom ne soit pas annoncé deux fois. */
 .logo img { display: block; object-fit: contain; flex: 0 0 auto; }
-.brand-name { font-weight: 700; letter-spacing: -.01em; }
-.brand-name b { font-weight: 700; color: var(--accent-light); }
 .hamburger { display: none; position: relative; border: 0; background: none; color: #fff; cursor: pointer; }
 .hamburger span { position: absolute; left: calc(50% - 12px); width: 24px; height: 3px; border-radius: 3px; background: currentColor; transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .25s ease, top .35s cubic-bezier(.4,0,.2,1); }
 .hamburger span:nth-child(1) { top: calc(50% - 10px); }
@@ -512,8 +510,18 @@ body { font-family: var(--body); }
 }
 
 /* Logo : pastille ronde dans l'en-tête, tampon complet dans le pied de page. */
-.logo img { height: 52px; width: 52px; border-radius: 50%; box-shadow: 0 0 0 2px rgba(239,232,218,.35); }
+.logo img { height: 52px; width: 52px; }
 .footer-badge { display: inline-block; margin-bottom: 18px; transition: transform .3s ease; }
 .footer-badge:hover { transform: rotate(-8deg); }
 .footer-badge img { display: block; width: 120px; height: 120px; }
 @media (max-width: 600px) { .logo img { height: 42px; width: 42px; } }
+
+/* Nom de marque assorti au tampon : Barlow Condensed, capitales espacées. */
+.logo { gap: 12px; }
+.brand-name { display: flex; flex-direction: column; line-height: 1; }
+.brand-title { font: 800 27px 'Barlow Condensed', var(--heading); letter-spacing: .06em; text-transform: uppercase; color: #fff; }
+.brand-tag { margin-top: 4px; font: 700 11.5px 'Barlow Condensed', var(--heading); letter-spacing: .22em; text-transform: uppercase; color: var(--accent-light); }
+@media (max-width: 600px) {
+  .brand-title { font-size: 22px; }
+  .brand-tag { font-size: 10px; letter-spacing: .18em; }
+}
