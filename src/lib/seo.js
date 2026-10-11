@@ -11,6 +11,7 @@ import { COMPANY, CONTACT } from './company'
 import { SERVICES, serviceBySlug } from './services'
 import { AREAS, CITIES, cityBySlug, atCity } from './cities'
 import { HOME_FAQS } from './content'
+import { AVIS } from './avis'
 import { PHOTOS, HERO_SRCSET, HERO_SIZES } from './photos'
 import interFont from '@fontsource/inter/files/inter-latin-400-normal.woff2?url'
 import outfitFont from '@fontsource/outfit/files/outfit-latin-700-normal.woff2?url'
@@ -59,6 +60,10 @@ function business(site) {
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '18:30' },
       { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '12:00' },
     ],
+    // Note moyenne : uniquement à partir des avis réels de avis.js.
+    aggregateRating: AVIS.length
+      ? { '@type': 'AggregateRating', ratingValue: (AVIS.reduce((sum, a) => sum + a.rating, 0) / AVIS.length).toFixed(1), reviewCount: AVIS.length, bestRating: 5, worstRating: 1 }
+      : '',
     knowsAbout: ['Couverture', 'Zinguerie', 'Réfection de toiture', 'Gouttières zinc', 'Recherche de fuite', 'Démoussage de toiture', 'Charpente', 'Fenêtre de toit', 'Tuile canal', 'Ardoise'],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',

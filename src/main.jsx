@@ -14,6 +14,7 @@ const app = (
 )
 
 // En production la page est pré-rendue : React reprend le HTML existant.
-// En développement (vite), le conteneur est vide et React le remplit.
-if (container.hasChildNodes()) hydrateRoot(container, app)
+// En développement (vite), le conteneur ne contient que le commentaire
+// <!--app-html--> du modèle : React le remplit.
+if (container.firstElementChild) hydrateRoot(container, app)
 else createRoot(container).render(app)

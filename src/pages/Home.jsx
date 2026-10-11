@@ -9,6 +9,7 @@ import Services from '../components/Services'
 import Showcase from '../components/Showcase'
 import Faq from '../components/Faq'
 import Contact from '../components/Contact'
+import Reviews from '../components/Reviews'
 
 function Counter({ to, suffix }) {
   const [value, setValue] = useState(to)
@@ -107,6 +108,8 @@ export default function Home() {
           ))}
         </ul>
       </section>
+
+      <Reviews />
 
       <section className="zones has-backdrop" id="zones" aria-labelledby="zones-title">
         <Backdrop variant="zones" />
