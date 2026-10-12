@@ -5,8 +5,7 @@
 # Sur Render : New > Blueprint, pointez sur ce dépôt.
 #
 # SITE_URL : adresse publique du site, utilisée pour les balises canonical,
-# Open Graph, le sitemap et le robots.txt. À remplacer par le vrai domaine
-# (ex. https://www.sc-couverture.fr) dès qu'il est branché, puis redéployer.
+# Open Graph, le sitemap et le robots.txt.
 
 services:
   - type: web
@@ -19,7 +18,7 @@ services:
       - key: NODE_VERSION
         value: "22"
       - key: SITE_URL
-        value: https://sc-couverture.onrender.com
+        value: https://sc-couverture.pro
     headers:
       # Fichiers nommés avec leur empreinte : mis en cache un an.
       - path: /assets/*

@@ -43,9 +43,13 @@ npm run preview    # sert dist/ pour vérifier le build
 Le fichier [`render.yaml`](./render.yaml) décrit le déploiement : sur Render,
 *New > Blueprint*, choisir ce dépôt. Chaque `git push` sur `main` redéploie.
 
-Le jour où le nom de domaine est branché : changer `SITE_URL` dans
-`render.yaml` (ou dans l'onglet *Environment* de Render), puis redéployer. Les
-URL canoniques, le sitemap et le robots.txt suivent.
+Adresse du site : `https://sc-couverture.pro` (`DEFAULT_SITE_URL` dans
+`src/lib/company.js`, `SITE_URL` dans `render.yaml`). Les URL canoniques, le
+sitemap et le robots.txt en dépendent.
+
+Sur un hébergement classique (Apache : OVH, o2switch…), `npm run build` puis
+déposer **le contenu** de `dist/` (fichier `.htaccess` caché compris) à la
+racine du site (`www` ou `public_html`).
 
 Le référencement (ce qui est fait, ce qui reste à faire) est détaillé dans
 [`SEO.md`](./SEO.md).
