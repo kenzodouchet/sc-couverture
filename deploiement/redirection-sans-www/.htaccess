@@ -1,0 +1,4 @@
+# À déposer à la racine du site PRINCIPAL de l'hébergement Amen (celui qui
+# répond sur sc-couverture.pro, sans www) : renvoie tout vers le vrai site.
+RewriteEngine On
+RewriteRule ^ https://www.sc-couverture.pro%{REQUEST_URI} [L,R=301]

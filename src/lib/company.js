@@ -42,4 +42,4 @@ export const MAPS_LINK_URL = `https://www.google.com/maps/search/?api=1&query=${
  * variable d'environnement SITE_URL (voir render.yaml) : on la change le jour
  * où le nom de domaine est branché, sans toucher au code.
  */
-export const DEFAULT_SITE_URL = 'https://sc-couverture.pro'
+export const DEFAULT_SITE_URL = 'https://www.sc-couverture.pro'

@@ -43,13 +43,17 @@ npm run preview    # sert dist/ pour vérifier le build
 Le fichier [`render.yaml`](./render.yaml) décrit le déploiement : sur Render,
 *New > Blueprint*, choisir ce dépôt. Chaque `git push` sur `main` redéploie.
 
-Adresse du site : `https://sc-couverture.pro` (`DEFAULT_SITE_URL` dans
+Adresse du site : `https://www.sc-couverture.pro` (`DEFAULT_SITE_URL` dans
 `src/lib/company.js`, `SITE_URL` dans `render.yaml`). Les URL canoniques, le
 sitemap et le robots.txt en dépendent.
 
 Sur un hébergement classique (Apache : OVH, o2switch…), `npm run build` puis
 déposer **le contenu** de `dist/` (fichier `.htaccess` caché compris) à la
-racine du site (`www` ou `public_html`).
+racine du site. Chez Amen : `/subsites/www.sc-couverture.pro`.
+
+`sc-couverture.pro` (sans www) est servi par le site principal de
+l'hébergement, un autre dossier : y déposer le fichier
+`deploiement/redirection-sans-www/.htaccess`, qui renvoie vers le www.
 
 Le référencement (ce qui est fait, ce qui reste à faire) est détaillé dans
 [`SEO.md`](./SEO.md).
