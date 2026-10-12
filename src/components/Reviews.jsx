@@ -96,7 +96,7 @@ export default function Reviews() {
 
   return (
     <section className="reviews has-backdrop" id="avis" aria-labelledby="avis-title">
-      <Backdrop variant="faq" />
+      <Backdrop variant="avis" />
       <p className="small-title center">Avis clients</p>
       <h2 className="center" id="avis-title">Ils nous ont confié leur toiture</h2>
       <div className="reviews-summary">

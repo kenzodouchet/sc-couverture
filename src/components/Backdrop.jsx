@@ -185,6 +185,7 @@ const THEMES = {
   methode: { icon: 'clipboard' },
   expertise: { icon: 'shield', count: 10 },
   faq: { icon: 'question', sizeFactor: 1.15 },
+  avis: { icon: 'bubble', count: 10 },
   contact: { icon: 'phone' },
   zones: { icon: 'pin', sizeFactor: 1.1 },
   page: { icon: 'roof', count: 8 },

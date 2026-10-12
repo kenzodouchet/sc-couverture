@@ -281,7 +281,7 @@ nav a:hover::before { transform: skew(-10deg) scaleX(1); transform-origin: left 
 .why, .expertise { overflow: hidden; }
 .why .backdrop { color: #fff; opacity: .13; }
 .expertise .backdrop { opacity: .1; }
-.mission .backdrop, .zones .backdrop, .faq .backdrop, .contact .backdrop { color: var(--primary); }
+.mission .backdrop, .zones .backdrop, .faq .backdrop, .contact .backdrop, .reviews .backdrop { color: var(--primary); }
 .mission .backdrop, .faq .backdrop, .contact .backdrop { opacity: .11; }
 @media (prefers-reduced-motion: reduce) { .backdrop-float { animation: none; } }
 
@@ -534,7 +534,7 @@ img.hero-bg { width: 100%; height: 100%; object-fit: cover; object-position: cen
 .page-hero-lead strong { color: #fff; font-weight: 600; }
 
 /* --- Avis clients ------------------------------------------------------- */
-.reviews { max-width: 1240px; margin: 0 auto 100px; padding: 0 5%; text-align: center; }
+.reviews { max-width: 1240px; margin: 100px auto; padding: 0 5%; text-align: center; }
 .reviews-summary { display: inline-flex; align-items: center; gap: 16px; margin: 8px 0 36px; padding: 14px 24px; background: var(--light); border-radius: 14px; }
 .reviews-summary > strong { font: 700 42px 'Barlow Condensed', var(--heading); color: var(--dark2); line-height: 1; }
 .reviews-summary > div { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; font-size: 13.5px; }
@@ -547,7 +547,8 @@ img.hero-bg { width: 100%; height: 100%; object-fit: cover; object-position: cen
 .review-avatar { flex: 0 0 40px; height: 40px; display: grid; place-content: center; border-radius: 50%; background: var(--primary); color: #fff; font: 700 17px 'Barlow Condensed', var(--heading); }
 .review-card figcaption strong { display: block; font: 600 15px var(--heading); color: var(--dark2); }
 .review-card figcaption span span { font-size: 12.5px; color: var(--text); }
-@media (max-width: 900px) { .reviews { margin-bottom: 60px; } }
+@media (max-width: 1024px) { .reviews { margin: 70px auto; } }
+@media (max-width: 600px) { .reviews { margin: 44px auto; } }
 
 /* Carrousel d'avis : 3 cartes visibles, 2 sur tablette, 1 + aperçu sur mobile. */
 .reviews-carousel { position: relative; text-align: left; }
