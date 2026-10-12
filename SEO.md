@@ -42,7 +42,7 @@
 
 | Élément | Où | Pourquoi |
 | --- | --- | --- |
-| **Email, adresse, SIREN, dirigeant** | `src/lib/company.js` | Le téléphone est renseigné ; l'email `contact@sc-couverture.fr` suppose le domaine acheté, le reste est vide. Google compare ces données avec la fiche Google Business : elles doivent être identiques, au caractère près. |
+| **Adresse, SIREN, dirigeant** | `src/lib/company.js` | Téléphone et email sont renseignés ; l'adresse, le SIREN et le dirigeant restent vides. Google compare ces données avec la fiche Google Business : elles doivent être identiques, au caractère près. |
 | **Nom de domaine** | `SITE_URL` dans `render.yaml` | Acheter `sc-couverture.fr` (ou équivalent), le brancher sur Render (*Settings > Custom Domains*), puis changer `SITE_URL`. |
 | **Assurance décennale** | `src/lib/content.js`, `src/pages/City.jsx` | Le site l'annonce (obligatoire pour un couvreur) : vérifier qu'elle est bien en cours. |
 | **Horaires** | `src/lib/company.js` + `openingHoursSpecification` dans `src/lib/seo.js` | Lun-Ven 8h-18h30, Sam 9h-12h par défaut. |

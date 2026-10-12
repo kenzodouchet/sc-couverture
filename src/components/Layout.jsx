@@ -5,6 +5,8 @@ import { CITIES, cityPath } from '../lib/cities'
 import logo from '../assets/brand/logo.svg'
 import badge from '../assets/brand/badge.svg'
 import { Icon } from './Icons'
+import ConsentBanner from './ConsentBanner'
+import { openConsent } from '../lib/consent'
 
 /** Nom de marque, dans le style du tampon : nom en capitales, métier en cuivre dessous. */
 export const Brand = () => (
@@ -156,7 +158,10 @@ function Footer() {
         </div>
         <div className="footer-bottom">
           <span>© {YEAR} {COMPANY.name}{COMPANY.siren ? ` – SIREN ${COMPANY.siren}` : ''} – Couvreur-zingueur en Gironde</span>
-          <a href="/mentions-legales/">Mentions légales</a>
+          <span className="footer-legal">
+            <a href="/mentions-legales/">Mentions légales</a>
+            <button type="button" onClick={openConsent}>Gérer les cookies</button>
+          </span>
         </div>
       </div>
     </footer>
@@ -170,6 +175,7 @@ export default function Layout({ page, children }) {
       <Header page={page} />
       <main id="contenu">{children}</main>
       <Footer />
+      <ConsentBanner />
     </div>
   )
 }

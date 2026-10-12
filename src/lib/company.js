@@ -22,7 +22,7 @@ export const CONTACT = {
   // Format international sans espaces pour les liens tel:.
   phone: '+33749168144',
   phoneDisplay: '07 49 16 81 44',
-  email: 'contact@sc-couverture.fr',
+  email: 'contact@schartier-multiservices.fr',
   street: '',
   postalCode: '33000',
   locality: 'Bordeaux',

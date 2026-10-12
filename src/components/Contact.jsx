@@ -1,9 +1,11 @@
 import { COMPANY, CONTACT, MAPS_EMBED_URL, MAPS_LINK_URL } from '../lib/company'
 import { Icon } from './Icons'
 import Backdrop from './Backdrop'
+import { saveConsent, useConsent } from '../lib/consent'
 
 /** Bloc Contact commun à toutes les pages : coordonnées, appel, carte. */
 export default function Contact({ title = 'Nous contacter', lead }) {
+  const consent = useConsent()
   return (
     <section className="contact has-backdrop" id="contact" aria-labelledby="contact-title">
       <Backdrop variant="contact" />
@@ -24,7 +26,16 @@ export default function Contact({ title = 'Nous contacter', lead }) {
           </div>
         </div>
         <div className="contact-map">
-          <iframe src={MAPS_EMBED_URL} title={`Carte : ${COMPANY.name}, couvreur en Gironde`} loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade" />
+          {consent?.maps ? (
+            <iframe src={MAPS_EMBED_URL} title={`Carte : ${COMPANY.name}, couvreur en Gironde`} loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade" />
+          ) : (
+            <div className="map-placeholder">
+              <Icon.Pin />
+              <strong>Intervention dans toute la Gironde</strong>
+              <p>La carte est fournie par Google Maps, qui peut déposer des cookies.</p>
+              <button type="button" className="btn btn-primary" onClick={() => saveConsent({ ...consent, maps: true })}>Afficher la carte</button>
+            </div>
+          )}
         </div>
       </div>
     </section>

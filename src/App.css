@@ -108,7 +108,7 @@ nav a:hover::before { transform: skew(-10deg) scaleX(1); transform-origin: left 
 .hero-content > p { font-size: 15px; color: var(--primary-soft); margin-bottom: 28px; }
 
 .hero-stats { max-width: 1200px; margin: -70px auto 0; padding: 0 12px; position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.hero-stats > div { background: var(--primary); border-bottom: 4px solid var(--accent); color: #fff; padding: 20px 16px; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; box-shadow: 0 12px 24px rgba(15,28,43,.15); }
+.hero-stats > div { background: var(--primary); color: #fff; padding: 20px 16px; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; box-shadow: 0 12px 24px rgba(15,28,43,.15); }
 .hero-stats .counter-number { font: 700 40px var(--heading); line-height: 1; }
 .hero-stats span { font: 500 14.5px var(--body); line-height: 1.3; white-space: nowrap; }
 
@@ -569,3 +569,45 @@ img.hero-bg { width: 100%; height: 100%; object-fit: cover; object-position: cen
   .reviews-arrow { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .reviews-track { scroll-behavior: auto; } }
+
+/* --- Carte Google Maps en attente de consentement ---------------------- */
+.map-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 30px; text-align: center; background: linear-gradient(135deg, #E9EEF4, #F5F7FA); }
+.map-placeholder svg { width: 34px; height: 34px; fill: var(--accent); }
+.map-placeholder strong { font: 600 18px var(--heading); color: var(--dark2); }
+.map-placeholder p { max-width: 300px; font-size: 13.5px; }
+.map-placeholder .btn { margin-top: 6px; }
+
+/* --- Fenêtre de consentement ------------------------------------------- */
+.consent-backdrop { position: fixed; inset: auto 0 0 0; z-index: 1500; display: flex; justify-content: center; padding: 16px; pointer-events: none; }
+.consent { pointer-events: auto; width: min(640px, 100%); padding: 24px 26px 18px; background: #fff; border-radius: 18px; box-shadow: 0 24px 60px rgba(15,28,43,.28); animation: consent-in .4s cubic-bezier(.2,.8,.2,1); }
+@keyframes consent-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.consent-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.consent-brand { display: inline-flex; align-items: center; gap: 8px; font: 800 17px 'Barlow Condensed', var(--heading); letter-spacing: .05em; text-transform: uppercase; color: var(--primary); }
+.consent-brand img { width: 40px; height: 40px; }
+.consent-head h2 { flex: 1; margin: 0; font-size: 19px; color: var(--dark2); text-align: center; }
+.consent-close { width: 36px; height: 36px; border: 0; border-radius: 50%; background: var(--light); color: var(--dark2); font-size: 16px; cursor: pointer; }
+.consent-close:hover { background: var(--line); }
+.consent > p { font-size: 14px; line-height: 1.6; color: var(--text); }
+.consent-details { display: grid; gap: 8px; margin-top: 14px; }
+.consent-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 14px; background: var(--light); border-radius: 10px; cursor: pointer; }
+.consent-row strong { display: block; font-size: 14px; color: var(--dark2); }
+.consent-row small { font-size: 12.5px; color: var(--text); }
+.consent-row input { width: 20px; height: 20px; accent-color: var(--primary); flex: 0 0 auto; }
+.consent-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+.consent-btn { padding: 13px 10px; font: 600 14.5px var(--body); color: var(--dark2); background: var(--light); border: 1px solid var(--line); border-radius: 9px; cursor: pointer; transition: background .2s, border-color .2s; }
+.consent-btn:hover { border-color: var(--primary); }
+.consent-btn.accept { color: #fff; background: var(--primary); border-color: var(--primary); }
+.consent-btn.accept:hover { background: var(--dark-hover); }
+.consent-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-top: 14px; }
+.consent-links a { font-size: 13px; color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.footer-legal { display: inline-flex; gap: 16px; }
+.footer-legal button { padding: 0; border: 0; background: none; font: inherit; color: inherit; cursor: pointer; }
+.footer-legal button:hover { color: #fff; text-decoration: underline; }
+@media (max-width: 600px) {
+  .consent { padding: 18px 18px 14px; }
+  .consent-head { flex-wrap: wrap; gap: 8px; }
+  .consent-head h2 { order: 3; flex-basis: 100%; text-align: left; font-size: 17px; }
+  .consent-close { margin-left: auto; }
+  .consent-actions { grid-template-columns: 1fr 1fr; }
+  .consent-actions .consent-btn:last-child { grid-column: 1 / -1; }
+}
