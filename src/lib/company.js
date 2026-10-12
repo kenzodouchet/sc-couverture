@@ -19,9 +19,9 @@ export const COMPANY = {
 }
 
 export const CONTACT = {
-  // À COMPLÉTER. Format international sans espaces pour les liens tel:.
-  phone: '+33600000000',
-  phoneDisplay: '06 00 00 00 00',
+  // Format international sans espaces pour les liens tel:.
+  phone: '+33749168144',
+  phoneDisplay: '07 49 16 81 44',
   email: 'contact@sc-couverture.fr',
   street: '',
   postalCode: '33000',
