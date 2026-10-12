@@ -1,12 +1,12 @@
 # Configuration pour un hébergement Apache (OVH, o2switch, Hostinger…).
 # Ignorée par Render, qui a ses propres réglages (render.yaml).
 
-# Une seule adresse pour Google : HTTPS et avec « www ». Chez Amen, le site
-# est le sous-site www.sc-couverture.pro (/subsites/www.sc-couverture.pro).
+# Une seule adresse pour Google : HTTPS et sans « www ». Chez Amen, le site
+# est le sous-site sc-couverture.pro (dossier /subsites/sc-couverture.pro).
 RewriteEngine On
 RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} !^www\. [NC]
-RewriteRule ^ https://www.sc-couverture.pro%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://sc-couverture.pro%{REQUEST_URI} [L,R=301]
 
 # Page introuvable personnalisée.
 ErrorDocument 404 /404.html

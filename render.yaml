@@ -18,7 +18,7 @@ services:
       - key: NODE_VERSION
         value: "22"
       - key: SITE_URL
-        value: https://www.sc-couverture.pro
+        value: https://sc-couverture.pro
     headers:
       # Fichiers nommés avec leur empreinte : mis en cache un an.
       - path: /assets/*

@@ -1,0 +1,4 @@
+# À déposer dans /subsites/www.sc-couverture.pro (sous-site www d'Amen) :
+# renvoie toutes les adresses en www vers le vrai site, sans www.
+RewriteEngine On
+RewriteRule ^ https://sc-couverture.pro%{REQUEST_URI} [L,R=301]
