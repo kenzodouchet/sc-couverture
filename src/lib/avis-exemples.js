@@ -1,8 +1,7 @@
 /**
  * Avis D'EXEMPLE, pour juger de la mise en page de la section « Avis
- * clients ». Ils ne sont affichés qu'en développement (npm run dev) ou si la
- * variable VITE_AVIS_DEMO=1 est définie au build, toujours avec un bandeau
- * « Avis d'exemple ». Ne jamais les publier comme de vrais avis.
+ * clients ». Ils ne sont affichés qu'en développement (npm run dev), jamais
+ * dans le site construit. Ne jamais les publier comme de vrais avis.
  */
 export const AVIS_EXEMPLES = [
   { name: 'Marie L.', city: 'Mérignac', work: 'Réfection de toiture', rating: 5, date: '2026-09', text: 'Devis clair et détaillé, chantier tenu dans les délais. La toiture était bâchée chaque soir et tout a été nettoyé à la fin. Très satisfaite.' },

@@ -2,11 +2,9 @@ import { AVIS } from '../lib/avis'
 import { AVIS_EXEMPLES } from '../lib/avis-exemples'
 import Backdrop from './Backdrop'
 
-// Les avis d'exemple ne sortent jamais par erreur en production : seulement
-// en développement, ou si VITE_AVIS_DEMO=1 est défini explicitement au build.
-const DEMO = import.meta.env.DEV || import.meta.env.VITE_AVIS_DEMO === '1'
-const ITEMS = AVIS.length ? AVIS : DEMO ? AVIS_EXEMPLES : []
-const IS_DEMO = !AVIS.length && ITEMS.length > 0
+// Les avis d'exemple ne servent qu'à juger la mise en page en local
+// (npm run dev) : aucun build, donc aucune version en ligne, ne les contient.
+const ITEMS = AVIS.length ? AVIS : import.meta.env.DEV ? AVIS_EXEMPLES : []
 
 const MONTHS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
 const formatDate = (value) => {
@@ -32,7 +30,6 @@ export default function Reviews() {
   return (
     <section className="reviews has-backdrop" id="avis" aria-labelledby="avis-title">
       <Backdrop variant="faq" />
-      {IS_DEMO && <p className="reviews-demo">Avis d’exemple : aperçu de mise en page, à remplacer par les vrais avis clients</p>}
       <p className="small-title center">Avis clients</p>
       <h2 className="center" id="avis-title">Ils nous ont confié leur toiture</h2>
       <div className="reviews-summary">
